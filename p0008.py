@@ -51,12 +51,10 @@ number_1000_digits = "73167176531330624919225119674426574742355349194934" \
 
 
 def product_of_digits_number(number):
-    # print(number)
     number = str(number)
     mult = 1
     for i in number:
         mult *= int(i)
-        # print(mult)
     return mult
 
 
@@ -67,17 +65,12 @@ def greatest_number(number, adjacent_number):
 
     for i in range(0, len(number)-adjacent_number+1):
         number_x_digits = number[i:i+adjacent_number]
-        # print(i+adjacent_number)
-        # print(number_x_digits)
-
         if '0' not in number_x_digits:
             print(number_x_digits)
             product = product_of_digits_number(number_x_digits)
             if product > greatest:
                 number_final = number_x_digits
                 greatest = product
-
-    # print('El mayor es {}'.format(greatest))
 
     return int(greatest), int(number_final)
 
