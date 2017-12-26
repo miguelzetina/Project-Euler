@@ -50,33 +50,37 @@ number_1000_digits = "73167176531330624919225119674426574742355349194934" \
 "71636269561882670428252483600823257530420752963450"
 
 
-def greatest_number(number, adjacent_number):
-
-    greatest = 0
-
-    for i in range(0, len(number)-adjacent_number):
-        number_x_digits = int(number[i:i+adjacent_number])
-        # print(number_x_digits)
-        if number_x_digits > greatest:
-            greatest = number_x_digits
-
-    # print('El mayor es {}'.format(greatest))
-
-    return int(greatest)
-
-
 def product_of_digits_number(number):
     # print(number)
     number = str(number)
     mult = 1
     for i in number:
-        if i == '0':
-            continue
-        else:
-            mult *= int(i)
-            # print(mult)
+        mult *= int(i)
+        # print(mult)
     return mult
 
 
+def greatest_number(number, adjacent_number):
+
+    greatest = 0
+    number_final = 0
+
+    for i in range(0, len(number)-adjacent_number+1):
+        number_x_digits = number[i:i+adjacent_number]
+        # print(i+adjacent_number)
+        # print(number_x_digits)
+
+        if '0' not in number_x_digits:
+            print(number_x_digits)
+            product = product_of_digits_number(number_x_digits)
+            if product > greatest:
+                number_final = number_x_digits
+                greatest = product
+
+    # print('El mayor es {}'.format(greatest))
+
+    return int(greatest), int(number_final)
+
+
 g = greatest_number(number_1000_digits, 13)
-print('El producto más grande es {} de los 13 dígitos: {}'.format(product_of_digits_number(g), g))
+print('El producto más grande es {} de los 13 dígitos: {}'.format(g[0], g[1]))
