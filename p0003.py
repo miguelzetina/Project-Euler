@@ -20,6 +20,10 @@ def is_prime_of(a, b):
     return b % a == 0
 
 
+from decorator_time import *
+
+
+@decorator_time
 def largest_prime_of(b):
     mult = 1
     for n in range(2, b):

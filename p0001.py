@@ -4,5 +4,5 @@ get 3, 5, 6 and 9. The sum of these multiples is 23.
 Find the sum of all the multiples of 3 or 5 below 1000.
 """
 
-nums = [numero for numero in range(0,100) if numero % 3 == 0 or numero % 5 == 0 ]
+nums = [numero for numero in range(0, 1000) if numero % 3 == 0 or numero % 5 == 0]
 print(sum(nums))
