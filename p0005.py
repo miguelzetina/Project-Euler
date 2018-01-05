@@ -17,13 +17,13 @@ def number_divisible(num, max, min=1):
 def smallest_multiple(max, min=1):
     num = 0
     while True:
-        num += 1
-        print(num)
+        num += max
+        # print(num)
         if number_divisible(num, max, min):
-            print("El número {} es divisible total".format(num))
+            # print("El número {} es divisible total".format(num))
             break
-    print('El número más chico que es posible dividir con todos los números de {} a {} es {}'
-          .format(min, max, num))
+    print('El número más chico que es posible dividir con todos los números '
+          'de {} a {} es {}'.format(min, max, num))
 
 
-smallest_multiple(10, 1)
+smallest_multiple(20, 1)
