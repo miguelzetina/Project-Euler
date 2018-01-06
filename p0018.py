@@ -52,8 +52,10 @@ def triangle_to_mat(data):
     return rows
 
 
-data = triangle_to_mat('data0018.txt')
+if __name__ == "__main__":
 
-s = sume_at_row(data, len(data)-2)
+    data = triangle_to_mat('data0018.txt')
 
-print("La suma es: {}".format(s))
+    s = sume_at_row(data, len(data)-2)
+
+    print("La suma es: {}".format(s))
